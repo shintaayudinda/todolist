@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="css/todolist.css" rel="stylesheet">
+
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<section>
+	
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-tab">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-4">
+							<a href="#" class="active" id="todo-link">To Do</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#" id="tobuy-link">To Buy</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#" id="towatch-link">To Watch</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-lg-12">
+							<div id="todo" style="display: block;">
+								<div class="input-group">
+							      	<input type="text" id="myInput" class="form-control" placeholder="Add new to-do">
+							      	<span class="input-group-btn">
+							        	<button class="btn btn-default" type="button" onclick="newElement()">Go!</button>
+							      	</span>
+							    </div>
+									
+								<ul id="myUL" style="list-style: none;">
+								  <li class="single">Dentist appointment</li>
+								  <li class="single">Return Gaby's jacket</li>
+								  <li class="single">KM individual assignment</li>
+								</ul>
+							</div>
+							<div id="tobuy" style="display: none;">
+								<div class="input-group">
+							      	<input type="text" id="myInput" class="form-control" placeholder="Add new to-buy item">
+							      	<span class="input-group-btn">
+							        	<button class="btn btn-default" type="button" onclick="newElement()">Go!</button>
+							      	</span>
+							    </div>
+									
+								<ul id="myUL" style="list-style: none;">
+								  <li class="single">Nutella</li>
+								  <li class="single">Soap</li>
+								  <li class="single">Foundation</li>
+								  <li class="single">Coat from Forever 21</li>
+								</ul>
+							</div>
+							<div id="towatch" style="display: none;">
+								<div class="input-group">
+							      	<input type="text" id="myInput" class="form-control" placeholder="Add new to-watch movie/show">
+							      	<span class="input-group-btn" onclick="newElement()">
+							        	<button class="btn btn-default" type="button">Go!</button>
+							      	</span>
+							    </div>
+									
+								<ul id="myUL" style="list-style: none;">
+								  <li class="single">The Martian</li>
+								  <li class="single">The Big Short</li>
+								  <li class="single">Midnight in Paris</li>
+								  <li class="single">Buried</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+			                	
+	
+</section>
+
+
+<script src="js/todolist.js"></script>	
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+
+    $('#todo-link').click(function(e) {
+		$("#todo").delay(100).fadeIn(100);
+ 		$("#tobuy").fadeOut(100);
+ 		$("#towatch").fadeOut(100);
+		$('#tobuy-link').removeClass('active');
+		$('#towatch-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#tobuy-link').click(function(e) {
+		$("#tobuy").delay(100).fadeIn(100);
+ 		$("#todo").fadeOut(100);
+ 		$("#towatch").fadeOut(100);
+		$('#todo-link').removeClass('active');
+		$('#towatch-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#towatch-link').click(function(e) {
+		$("#towatch").delay(100).fadeIn(100);
+ 		$("#todo").fadeOut(100);
+ 		$("#tobuy").fadeOut(100);
+		$('#todo-link').removeClass('active');
+		$('#tobuy-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+});
+
+</script>
+</body>
+</html>
+
